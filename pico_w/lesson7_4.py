@@ -1,11 +1,23 @@
 from tools import connect,reconnect
 from machine import ADC,Pin,Timer
+import time
+
+# https://hook.eu2.make.com/hprirtys1hl7aowqav4uku3lael4cqpi?data=2024-01-05-14:25:00&temperature=25.46&from=%E5%AD%B8%E9%99%A2
+
+
 
 adc = ADC(4)     # create ADC object on ADC pin,最後一個,溫度
 conversion_factor = 3.3/65535
 
+start_time = 0
+duration = 60
+
 def alert():
-    print("要爆炸了")
+    global start_time
+    if time.ticks_diff(time.ticks_ms(), start_time) >= duration * 1000:        
+        print("要爆炸了")
+        print("傳送訊息")
+        start_time = time.ticks_ms()
 
 def second1(t):
     reading_v = adc.read_u16() * conversion_factor
@@ -13,7 +25,7 @@ def second1(t):
     # Typically, Vbe = 0.706V at 27 degrees C, with a slope of -1.721mV (0.001721) per degree. 
     celsius = 27 - (reading_v-0.706) / 0.001721
     print(celsius)
-    if celsius >= 28:
+    if celsius >= 25:
         alert()
         
     
