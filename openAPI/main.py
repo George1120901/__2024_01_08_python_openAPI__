@@ -16,13 +16,14 @@ def read_root():
     return {"pico_w": "temperture"}
 
 
+@app.get("/counter/{c}")
+def counter(c: int):
+    counter = redis_conn.incr('test:increment', c)
+    return {"Counter": counter}
+
 @app.get("/temperature/{celsius}")
 def counter(c: int):
     celsius = redis_conn.get('board:temp')
     return {"temperature": celsius}
 
 
-@app.get("/counter/{c}")
-def counter(c: int):
-    counter = redis_conn.incr('test:increment', c)
-    return {"Counter": counter}
