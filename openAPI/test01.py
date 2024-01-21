@@ -19,7 +19,7 @@ def aboard_temp(temp):
         reconnect()
     else:
         if response.status_code == 200:
-            print("傳送訊息成功")
+            print("傳送訊息成功",celsius)
         else:
             print("傳送失敗(make服務出問題)")
         response.close()

@@ -17,12 +17,6 @@ def read_root():
     return {"pico_w": "temperture"}
 
 
-@app.get("/counter/{c}")
-def counter():
-    counter = redis_conn.incr('temp:incrNum', 1)
-    return {"Counter": counter}
-
-
 @app.get("/temperature/{celsius}")
 def pico_temp(celsius: float):
     celsius = redis_conn.set('board:temp', celsius)
@@ -32,5 +26,4 @@ def pico_temp(celsius: float):
 @app.get("/temperature")
 def now_temp():
     celsius = redis_conn.get('board:temp')
-    counter = redis_conn.get("Counter")
-    return {"Counter": counter,"溫度": celsius}
+    return {"溫度": celsius}
