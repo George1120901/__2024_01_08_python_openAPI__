@@ -11,7 +11,7 @@ conversion_factor = 3.3/65535
 def aboard_temp(temp):
     reading_v = adc.read_u16() * conversion_factor
     celsius = round(27 - (reading_v-0.706) / 0.001721, 2)
-    url_str = f'https: // webServer-xxxx.onrender.com/temperature/{celsius}'
+    url_str = f'https://openapi-test-ksss.onrender.com/temperature/{celsius}'
     try:
         response = urequests.get(url_str)
     except:
