@@ -31,3 +31,9 @@ https://youtube.com/live/cqiklZx0_z4
 ## 2024_01_19_下午
 https://youtube.com/live/PLqya40w2Og
 
+## 2024_01_22_早上
+https://youtube.com/live/DTPpFlrHUKc
+
+## 2024_01_22_下午
+https://youtube.com/live/6OUsGqK2ZEE
+
