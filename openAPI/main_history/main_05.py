@@ -3,8 +3,6 @@ from fastapi import FastAPI
 import redis
 import os
 from dotenv import load_dotenv
-from pydantic import BaseModel
-
 load_dotenv()
 redis_conn = redis.Redis.from_url(os.environ.get('REDIS_HOST_PASSWORD'))
 
@@ -33,25 +31,3 @@ async def read_item(date:str ,address:str,celsius:float,light:float):
     #print(f"光線:{light}")
     redis_conn.hset('pico_w:light',mapping={date:light})
     return {"狀態":"儲存成功"}
-
-
-class Pico_w(BaseModel):
-    date:str
-    address:str
-    temperature:float
-    light:float
-
-@app.get("/pico_w/")
-async def read_item(count:int=1):
-    date_list = redis_conn.lrange('pico_w:date',-count,-1)
-    dates = [date.decode() for date in date_list]
-    all_Data:[Pico_w] = []
-    for date in dates:
-        address_get = redis_conn.hget('pico_w:address',date).decode()
-        temperature_get = redis_conn.hget('pico_w:temperature',date).decode()
-        light_get = redis_conn.hget('pico_w:light',date).decode()
-        item = Pico_w(date=date,address=address_get,temperature=float(temperature_get),light=float(light_get))
-        all_Data.append(item)
-
-    
-    return all_Data
