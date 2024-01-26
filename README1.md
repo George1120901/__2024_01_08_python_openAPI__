@@ -37,3 +37,18 @@ https://youtube.com/live/DTPpFlrHUKc
 ## 2024_01_22_下午
 https://youtube.com/live/6OUsGqK2ZEE
 
+
+## 2024_01_24_早上
+https://youtube.com/live/Engt3LjgKo0
+
+## 2024_01_24_下午
+https://youtube.com/live/g1oshJyl414
+
+## 2024_01_26_早上
+https://youtube.com/live/QYfor9RNzlA
+
+## 2024_01_26_下午
+https://youtube.com/live/zh7Ia4SNxoU
+
+## open_API_實例講解
+https://youtu.be/pVF2ZbFPQKU
