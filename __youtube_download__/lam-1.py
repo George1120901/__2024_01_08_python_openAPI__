@@ -27,3 +27,13 @@ print(mz('Wolfgang', ' Amadeus',' Mozart'))
 print("匿名函數當作參數傳入-2")
 mz = (lambda a = 'Wolfgangus', b = ' Theophilus', c = ' Mozart': a + b + c) 
 print(mz('Wolf', ' Amadeus')) 
+
+print('??=======??')
+try1 = [lambda x: x ** 2, lambda x: x ** 3,
+lambda x: x ** 4] 
+print(try1.__class__) 
+for f in try1:
+	print(f.__class__)
+	print(f(3))
+ 
+print(try1[0](11))
