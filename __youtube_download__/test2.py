@@ -1,0 +1,2 @@
+# copy指令,直接在終端機上執行-->ok
+ffmpeg -i "C:/Users/Lu/Documents/youtube/python_231212V.mp4" -i "C:/Users/Lu/Documents/youtube/python_231212A.mp4" -c copy -map 0:v -map 1:a "C:/Users/Lu/Documents/youtube/python_231212All.mp4"
