@@ -1,5 +1,5 @@
 # 直接在終端機上執行 :
-# $ python test.py -->ok
+# >>>$ python test.py -->merge ok
 import subprocess
 
 def merge_video_and_audio(video_path, audio_path, output_path):
