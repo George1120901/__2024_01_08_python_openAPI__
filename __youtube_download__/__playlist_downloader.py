@@ -41,7 +41,7 @@ def download_playlist(playlist_url, resolution):
             audio_stream.download(filename="audio.mp4")
 
             os.system(
-                "ffmpeg -y -i video.mp4 -i audio.mp4 -c:v copy -c:a aac final.mp4 -loglevel quiet -stats")
+                "ffmpeg -y -i video.mp4 -i audio.mp4 -c:v copy -c:a aac final.mp4 -loglevel quiet -stats")  #Add -y for overwriting the output if already exists (without asking)
             os.rename("final.mp4", video_path)
             os.remove("video.mp4")
             os.remove("audio.mp4")
