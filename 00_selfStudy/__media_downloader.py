@@ -1,4 +1,5 @@
-# [Todo] from ChatGpt
+# [Todo] from ChatGpt  
+# Q : 執行「python media_downloader.py https://www.youtube.com/watch?v=5yhgUjKZY6w --mode video」、為甚麼結果是'FileNotFoundError: [WinError 2] 系統找不到指定的檔案。'?
 import argparse
 import subprocess
 import sys
